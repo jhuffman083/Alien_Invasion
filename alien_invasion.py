@@ -1,6 +1,7 @@
 import sys
 from time import sleep
 import json
+from turtle import Screen
 
 import pygame
 
@@ -70,6 +71,8 @@ class AlienInvasion:
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
         if button_clicked and not self.stats.game_active:
             self._start_game()
+            se.bg_music.play(-1)
+
 
     def _start_game(self):
         """Start a new game."""
@@ -86,7 +89,7 @@ class AlienInvasion:
         # Get rid of any remaining aliens and bullets.
         self.aliens.empty()
         self.bullets.empty()
-        
+
         # Create a new fleet and center the ship.
         self._create_fleet()
         self.ship.center_ship()
@@ -106,6 +109,7 @@ class AlienInvasion:
             self._fire_bullet()
         elif event.key == pygame.K_RETURN and not self.stats.game_active:
             self._start_game()
+            se.bg_music.play()
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
@@ -239,7 +243,7 @@ class AlienInvasion:
             if alien.check_edges():
                 self._change_fleet_direction()
                 break
-            
+
     def _change_fleet_direction(self):
         """Drop the entire fleet and change the fleet's direction."""
         for alien in self.aliens.sprites():

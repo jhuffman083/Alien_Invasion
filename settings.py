@@ -1,4 +1,6 @@
 import pygame
+from pygame.locals import *
+
 class Settings:
     """A class to store all settings for Alien Invasion."""
 
@@ -7,7 +9,7 @@ class Settings:
         # Screen settings
         self.screen_width = 1200
         self.screen_height = 800
-        self.bg_color = (220,220,220)
+        self.bg_color = (136, 124, 145)
 
         #ship settings
         #ship speed settings
@@ -17,11 +19,11 @@ class Settings:
         self.bullet_speed = 3
         self.bullet_width = 3
         self.bullet_height = 15
-        self.bullet_color = (60, 0 ,60)
+        self.bullet_color = ()
         self.bullets_allowed = 4
 
         #alien settings
-        self.alien_speed = 1.0
+        self.alien_speed = 1.5
         self.fleet_drop_speed = 8
         #fleet_direction of 1 represents right; -1 represents left
         self.fleet_direction = 1
