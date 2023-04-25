@@ -1,3 +1,4 @@
+import pygame
 
 class Settings:
     """A class to store all settings for Alien Invasion."""
@@ -8,6 +9,8 @@ class Settings:
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (136, 124, 145)
+        self.bg_image = pygame.image.load("images/bg.jpg")
+
 
         #ship settings
         #ship speed settings
@@ -25,7 +28,7 @@ class Settings:
         self.fleet_drop_speed = 8
         #fleet_direction of 1 represents right; -1 represents left
         self.fleet_direction = 1
-        #How quicckly the game speeds up
+        #How quickly the game speeds up
         self.speedup_scale = 1.1
         # How quickly the alien point values increase
         self.score_scale = 1.5

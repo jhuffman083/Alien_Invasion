@@ -4,7 +4,6 @@ import json
 from turtle import Screen
 
 import pygame
-from pygame.locals import *
 
 from settings import Settings
 from game_stats import GameStats
@@ -45,6 +44,7 @@ class AlienInvasion:
         """Start the main loop for the game."""
         while True:
             self._check_events()
+
 
             if self.stats.game_active:
                 self.ship.update()
@@ -253,6 +253,7 @@ class AlienInvasion:
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
+        self.screen.blit(self.settings.bg_image, (0,0))
         self.ship.blitme()
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
