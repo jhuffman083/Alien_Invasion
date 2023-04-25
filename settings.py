@@ -1,5 +1,3 @@
-import pygame
-from pygame.locals import *
 
 class Settings:
     """A class to store all settings for Alien Invasion."""
@@ -19,7 +17,7 @@ class Settings:
         self.bullet_speed = 3
         self.bullet_width = 3
         self.bullet_height = 15
-        self.bullet_color = ()
+        self.bullet_color = (204, 4, 44)
         self.bullets_allowed = 4
 
         #alien settings
