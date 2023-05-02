@@ -1,4 +1,10 @@
 # Alien Invasion
+
+I learned about how to do the coding for this game with *Python Crash Course, 3rd Edition
+(A Hands-On, Project-Based Introduction to Programming)
+by Eric Matthes* it was the first project in the book. I decided to add in sounds and a background image.
+
+
 In Alien Invasion, the player controls a rocket ship that appears 
 at the bottom center of the screen. The player can move the ship 
 right and left using the arrow keys and shoot bullets using the 
