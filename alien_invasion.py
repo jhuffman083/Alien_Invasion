@@ -148,7 +148,29 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
-            se.explosion_sound.play()
+            #when the alien dies we want a sound for it
+            #lets make a list for the sound to be randomly chosen from
+            import random
+
+            explosions = ['sounds/explosion.mp3', 'sounds/DumbbellWeightsDropMetalImpact PEHD056602.wav',
+            'sounds/explosion.mp3', 'sounds/GunShotSnglShotIn PE1097906.wav', 'sounds/battle-explosion_I77BgrZi.wav',
+            'sounds/blkfoot4-1_kei14nZt.wav', 'sounds/explosion_kHypbGqw.wav', 'sounds/a-a-ron.mp3',
+            'sounds/boing_x.wav', 'sounds/explosion.mp3',
+            'sounds/explosion.mp3', 'sounds/GunShotSnglShotIn PE1097906.wav', 'sounds/battle-explosion_I77BgrZi.wav',
+            'sounds/blkfoot4-1_kei14nZt.wav', 'sounds/explosion_kHypbGqw.wav', 'sounds/doorbell-1_QVaoD70Y.wav',
+            'sounds/explosion.mp3','sounds/explosion.mp3', 'sounds/GunShotSnglShotIn PE1097906.wav', 
+            'sounds/battle-explosion_I77BgrZi.wav','sounds/blkfoot4-1_kei14nZt.wav', 'sounds/explosion_kHypbGqw.wav', ] # list of sound objects
+            #have the random mosule choose an element and tie it to a variable
+            explosion_sound = random.choice(explosions)
+           #make aaron sound a little louder than other sounds
+            if explosion_sound == 'sounds/a-a-ron.mp3':
+                alien_death = pygame.mixer.Sound(explosion_sound)
+                alien_death.set_volume(0.5)
+            else:
+               alien_death = pygame.mixer.Sound(explosion_sound)
+               alien_death.set_volume(0.2)
+#play the sound when the alien dies
+            pygame.mixer.Sound.play(alien_death)
 
 
 
